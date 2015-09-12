@@ -1,27 +1,10 @@
 #include <pebble.h>
 #include <datetime.h>
-#define KEY_TEMPERATURE 0
-#define KEY_CONDITIONS 1
-
+#include <weather.h>
 
 static Window *s_main_window;
-static TextLayer *s_weather_layer;
 static BitmapLayer *s_background_layer;
-
-static GFont s_weather_font;
-
 static GBitmap *s_background_bitmap;
-
-
-static void update_weather() {
-  DictionaryIterator *iter;
-  app_message_outbox_begin(&iter);
-
-  // Add a key-value pair
-  dict_write_uint8(iter, 0, 0);
-
-  app_message_outbox_send();
-}
 
 
 static void tick_handler(struct tm *tick_time, TimeUnits units_changed) {
@@ -41,19 +24,8 @@ static void main_window_load(Window *window) {
   
   create_time_layer();
   create_date_layer();
+  create_weather_layer();
   
-  // Weather
-  s_weather_layer = text_layer_create(GRect(0, 130, 144, 25));
-  s_weather_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_PERFECT_DOS_VGA_20));
-  
-  text_layer_set_background_color(s_weather_layer, GColorClear);
-  text_layer_set_text_color(s_weather_layer, GColorBlack);
-  text_layer_set_font(s_weather_layer, s_weather_font);
-  text_layer_set_text(s_weather_layer, "Loading...");
-  text_layer_set_text_alignment(s_weather_layer, GTextAlignmentCenter);
-  
-  
-  // Putting it all together
   //layer_add_child(window_get_root_layer(window), bitmap_layer_get_layer(s_background_layer));
   layer_add_child(window_get_root_layer(window), text_layer_get_layer(s_weather_layer));
   layer_add_child(window_get_root_layer(window), text_layer_get_layer(s_date_layer));
@@ -126,13 +98,9 @@ static void init() {
 
 static void deinit() {
   window_destroy(s_main_window);
-  
-  text_layer_destroy(s_weather_layer);
-  text_layer_destroy(s_time_layer);
-  text_layer_destroy(s_date_layer);
-  fonts_unload_custom_font(s_time_font);
-  fonts_unload_custom_font(s_date_font);
-  fonts_unload_custom_font(s_weather_font);
+
+  unload_datetime();
+  unload_weather();
   
   gbitmap_destroy(s_background_bitmap);
   bitmap_layer_destroy(s_background_layer);
