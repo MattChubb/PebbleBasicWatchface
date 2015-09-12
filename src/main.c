@@ -34,6 +34,7 @@ static void main_window_load(Window *window) {
   layer_add_child(window_get_root_layer(window), text_layer_get_layer(s_battery_layer));
   layer_add_child(window_get_root_layer(window), text_layer_get_layer(s_date_layer));
   layer_add_child(window_get_root_layer(window), text_layer_get_layer(s_time_layer));
+  
 }
 
 static void main_window_unload(Window *window) {
@@ -80,9 +81,7 @@ static void outbox_sent_callback(DictionaryIterator *iterator, void *context) {
 
 
 static void init() {
-  // Libraries
-  battery_init();
-  
+ 
   // Main window
   s_main_window = window_create();
   window_set_window_handlers(s_main_window, (WindowHandlers) {
@@ -97,7 +96,9 @@ static void init() {
   app_message_register_outbox_failed(outbox_failed_callback);
   app_message_register_outbox_sent(outbox_sent_callback);
   app_message_open(app_message_inbox_size_maximum(), app_message_outbox_size_maximum());
-  
+ 
+  // Libraries
+  battery_init();
   // Time
   update_time();
   tick_timer_service_subscribe(MINUTE_UNIT, tick_handler);
