@@ -9,6 +9,11 @@
     "resources": {
         "media": [
             {
+                "file": "images/background.png",
+                "name": "IMAGE_BASIC_BACKGROUND",
+                "type": "png"
+            },
+            {
                 "file": "fonts/perfect-dos-vga.ttf",
                 "name": "FONT_PERFECT_DOS_VGA_52",
                 "type": "font"
@@ -18,7 +23,6 @@
     "sdkVersion": "3",
     "shortName": "Test watchface",
     "targetPlatforms": [
-        "aplite",
         "basalt"
     ],
     "uuid": "04ff2d4b-bb52-40bf-937f-886e9b9c8b1d",

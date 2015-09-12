@@ -3,6 +3,8 @@
 static Window *s_main_window;
 static TextLayer *s_time_layer;
 static GFont s_time_font;
+static BitmapLayer *s_background_layer;
+static GBitmap *s_background_bitmap;
 
 
 static void update_time() {
@@ -26,6 +28,12 @@ static void tick_handler(struct tm *tick_time, TimeUnits units_changed) {
 
 
 static void main_window_load(Window *window) {
+  // Background
+  s_background_bitmap = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_BASIC_BACKGROUND);
+  s_background_layer = bitmap_layer_create(GRect(0, 0, 144, 168));
+  bitmap_layer_set_bitmap(s_background_layer, s_background_bitmap);
+  
+  // Time
   s_time_layer = text_layer_create(GRect(0, 50, 144, 55));
   s_time_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_PERFECT_DOS_VGA_52));
   
@@ -34,6 +42,8 @@ static void main_window_load(Window *window) {
   text_layer_set_font(s_time_layer, s_time_font);
   text_layer_set_text_alignment(s_time_layer, GTextAlignmentCenter);
   
+  // Putting it all together
+  layer_add_child(window_get_root_layer(window), bitmap_layer_get_layer(s_background_layer));
   layer_add_child(window_get_root_layer(window), text_layer_get_layer(s_time_layer));
 }
 
@@ -58,6 +68,8 @@ static void init() {
 static void deinit() {
   window_destroy(s_main_window);
   fonts_unload_custom_font(s_time_font);
+  gbitmap_destroy(s_background_bitmap);
+  bitmap_layer_destroy(s_background_layer);
 }
 
 
