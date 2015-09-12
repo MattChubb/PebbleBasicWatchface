@@ -12,6 +12,11 @@
     "resources": {
         "media": [
             {
+                "file": "images/bt-icon.png",
+                "name": "IMAGE_BT_ICON",
+                "type": "png"
+            },
+            {
                 "file": "images/background.png",
                 "name": "IMAGE_BASIC_BACKGROUND",
                 "type": "png"

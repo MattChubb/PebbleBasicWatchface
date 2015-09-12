@@ -8,13 +8,13 @@ static void battery_handler(BatteryChargeState state) {
 }
 
 static void create_battery_layer() {
-  s_battery_layer = text_layer_create(GRect(14, 0, 115, 20));
+  s_battery_layer = text_layer_create(GRect(0, 0, 115, 20));
   s_battery_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_PERFECT_DOS_VGA_20));
   
   text_layer_set_background_color(s_battery_layer, GColorClear);
   text_layer_set_text_color(s_battery_layer, GColorBlack);
   text_layer_set_font(s_battery_layer, s_battery_font);
-  text_layer_set_text_alignment(s_battery_layer, GTextAlignmentCenter);
+  text_layer_set_text_alignment(s_battery_layer, GTextAlignmentLeft);
 }
 
 static void battery_init() {
