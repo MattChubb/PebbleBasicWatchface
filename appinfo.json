@@ -1,7 +1,10 @@
 {
-    "appKeys": {},
+    "appKeys": {
+        "KEY_CONDITIONS": 1,
+        "KEY_TEMPERATURE": 0
+    },
     "capabilities": [
-        ""
+        "location"
     ],
     "companyName": "chubb.matthew@gmail.com",
     "longName": "Test watchface",
@@ -35,7 +38,7 @@
     "targetPlatforms": [
         "basalt"
     ],
-    "uuid": "04ff2d4b-bb52-40bf-937f-886e9b9c8b1d",
+    "uuid": "f85a6dd1-35b4-47f4-b42f-5401855bef94",
     "versionLabel": "1.0",
     "watchapp": {
         "watchface": true
