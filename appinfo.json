@@ -1,0 +1,23 @@
+{
+    "appKeys": {},
+    "capabilities": [
+        ""
+    ],
+    "companyName": "chubb.matthew@gmail.com",
+    "longName": "Test watchface",
+    "projectType": "native",
+    "resources": {
+        "media": []
+    },
+    "sdkVersion": "3",
+    "shortName": "Test watchface",
+    "targetPlatforms": [
+        "aplite",
+        "basalt"
+    ],
+    "uuid": "04ff2d4b-bb52-40bf-937f-886e9b9c8b1d",
+    "versionLabel": "1.0",
+    "watchapp": {
+        "watchface": true
+    }
+}
