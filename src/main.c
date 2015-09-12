@@ -1,6 +1,8 @@
 #include <pebble.h>
+//#include <stdio.h>
 #include <datetime.h>
 #include <weather.h>
+#include <battery.h>
 
 static Window *s_main_window;
 static BitmapLayer *s_background_layer;
@@ -25,9 +27,11 @@ static void main_window_load(Window *window) {
   create_time_layer();
   create_date_layer();
   create_weather_layer();
+  create_battery_layer();
   
   //layer_add_child(window_get_root_layer(window), bitmap_layer_get_layer(s_background_layer));
   layer_add_child(window_get_root_layer(window), text_layer_get_layer(s_weather_layer));
+  layer_add_child(window_get_root_layer(window), text_layer_get_layer(s_battery_layer));
   layer_add_child(window_get_root_layer(window), text_layer_get_layer(s_date_layer));
   layer_add_child(window_get_root_layer(window), text_layer_get_layer(s_time_layer));
 }
@@ -76,6 +80,9 @@ static void outbox_sent_callback(DictionaryIterator *iterator, void *context) {
 
 
 static void init() {
+  // Libraries
+  battery_init();
+  
   // Main window
   s_main_window = window_create();
   window_set_window_handlers(s_main_window, (WindowHandlers) {
@@ -99,8 +106,9 @@ static void init() {
 static void deinit() {
   window_destroy(s_main_window);
 
-  unload_datetime();
-  unload_weather();
+  datetime_deinit();
+  weather_deinit();
+  battery_deinit();
   
   gbitmap_destroy(s_background_bitmap);
   bitmap_layer_destroy(s_background_layer);

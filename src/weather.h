@@ -25,7 +25,7 @@ static void create_weather_layer() {
   text_layer_set_text_alignment(s_weather_layer, GTextAlignmentCenter);
 }
 
-static void unload_weather() {
+static void weather_deinit() {
   text_layer_destroy(s_weather_layer);
   fonts_unload_custom_font(s_weather_font);
 }

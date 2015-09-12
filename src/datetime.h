@@ -1,6 +1,5 @@
 static TextLayer *s_time_layer;
 static TextLayer *s_date_layer;
-
 static GFont s_time_font;
 static GFont s_date_font;
 
@@ -44,7 +43,7 @@ static void create_date_layer() {
   text_layer_set_text_alignment(s_date_layer, GTextAlignmentCenter);
 }
 
-static void unload_datetime() {
+static void datetime_deinit() {
   text_layer_destroy(s_time_layer);
   text_layer_destroy(s_date_layer);
   fonts_unload_custom_font(s_time_font);
