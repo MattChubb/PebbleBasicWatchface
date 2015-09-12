@@ -2,8 +2,12 @@
 
 static Window *s_main_window;
 static TextLayer *s_time_layer;
-static GFont s_time_font;
+static TextLayer *s_weather_layer;
 static BitmapLayer *s_background_layer;
+
+static GFont s_time_font;
+static GFont s_weather_font;
+
 static GBitmap *s_background_bitmap;
 
 
@@ -42,8 +46,20 @@ static void main_window_load(Window *window) {
   text_layer_set_font(s_time_layer, s_time_font);
   text_layer_set_text_alignment(s_time_layer, GTextAlignmentCenter);
   
+  // Weather
+  s_weather_layer = text_layer_create(GRect(0, 130, 144, 25));
+  s_weather_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_PERFECT_DOS_VGA_20));
+  
+  text_layer_set_background_color(s_weather_layer, GColorClear);
+  text_layer_set_text_color(s_weather_layer, GColorBlack);
+  text_layer_set_font(s_weather_layer, s_weather_font);
+  text_layer_set_text(s_weather_layer, "Loading...");
+  text_layer_set_text_alignment(s_weather_layer, GTextAlignmentCenter);
+  
+  
   // Putting it all together
-  layer_add_child(window_get_root_layer(window), bitmap_layer_get_layer(s_background_layer));
+  //layer_add_child(window_get_root_layer(window), bitmap_layer_get_layer(s_background_layer));
+  layer_add_child(window_get_root_layer(window), text_layer_get_layer(s_weather_layer));
   layer_add_child(window_get_root_layer(window), text_layer_get_layer(s_time_layer));
 }
 

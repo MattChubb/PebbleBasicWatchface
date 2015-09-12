@@ -15,6 +15,16 @@
             },
             {
                 "file": "fonts/perfect-dos-vga.ttf",
+                "name": "FONT_PERFECT_DOS_VGA_48",
+                "type": "font"
+            },
+            {
+                "file": "fonts/perfect-dos-vga.ttf",
+                "name": "FONT_PERFECT_DOS_VGA_20",
+                "type": "font"
+            },
+            {
+                "file": "fonts/perfect-dos-vga.ttf",
                 "name": "FONT_PERFECT_DOS_VGA_52",
                 "type": "font"
             }
