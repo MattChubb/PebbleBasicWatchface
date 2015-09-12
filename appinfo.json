@@ -7,7 +7,13 @@
     "longName": "Test watchface",
     "projectType": "native",
     "resources": {
-        "media": []
+        "media": [
+            {
+                "file": "fonts/perfect-dos-vga.ttf",
+                "name": "FONT_PERFECT_DOS_VGA_52",
+                "type": "font"
+            }
+        ]
     },
     "sdkVersion": "3",
     "shortName": "Test watchface",
