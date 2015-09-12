@@ -69,6 +69,7 @@ static void main_window_unload(Window *window) {
 
 
 static void init() {
+  // Main window
   s_main_window = window_create();
   window_set_window_handlers(s_main_window, (WindowHandlers) {
     .load = main_window_load,
@@ -76,14 +77,19 @@ static void init() {
   });
   window_stack_push(s_main_window, true);
   
+  // Time
   update_time();
-  
   tick_timer_service_subscribe(MINUTE_UNIT, tick_handler);
 }
 
 static void deinit() {
   window_destroy(s_main_window);
+  
+  text_layer_destroy(s_weather_layer);
+  text_layer_destroy(s_time_layer);
   fonts_unload_custom_font(s_time_font);
+  fonts_unload_custom_font(s_weather_font);
+  
   gbitmap_destroy(s_background_bitmap);
   bitmap_layer_destroy(s_background_layer);
 }
