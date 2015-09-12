@@ -36,6 +36,7 @@
     "sdkVersion": "3",
     "shortName": "Test watchface",
     "targetPlatforms": [
+        "aplite",
         "basalt"
     ],
     "uuid": "f85a6dd1-35b4-47f4-b42f-5401855bef94",
