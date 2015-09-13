@@ -21,6 +21,7 @@ static void tick_handler(struct tm *tick_time, TimeUnits units_changed) {
 static void main_window_load(Window *window) {
   create_time_layer();
   create_date_layer();
+  create_day_layer();
   create_weather_layer();
   create_battery_layer();
   create_bt_icon_layer();
@@ -29,6 +30,7 @@ static void main_window_load(Window *window) {
   layer_add_child(window_get_root_layer(window), text_layer_get_layer(s_battery_layer));
   layer_add_child(window_get_root_layer(window), bitmap_layer_get_layer(s_bt_icon_layer));
   layer_add_child(window_get_root_layer(window), text_layer_get_layer(s_date_layer));
+  layer_add_child(window_get_root_layer(window), text_layer_get_layer(s_day_layer));
   layer_add_child(window_get_root_layer(window), text_layer_get_layer(s_time_layer));
 }
 

@@ -1,7 +1,7 @@
 static TextLayer *s_battery_layer;
 static GFont s_battery_font;
 
-#define battery_font_resource RESOURCE_ID_FONT_PERFECT_DOS_VGA_20
+#define battery_font_resource RESOURCE_ID_FONT_NEUROPOLITICAL_15
 
 static void battery_handler(BatteryChargeState state) {
   static char battery_buffer[4] = "100%";

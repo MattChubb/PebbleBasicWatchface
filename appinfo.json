@@ -12,29 +12,24 @@
     "resources": {
         "media": [
             {
-                "file": "fonts/ARCADECLASSIC.TTF",
-                "name": "FONT_ARCADECLASSIC_60",
+                "file": "fonts/neuropolitical rg.ttf",
+                "name": "FONT_NEUROPOLITICAL_15",
+                "type": "font"
+            },
+            {
+                "file": "fonts/neuropolitical rg.ttf",
+                "name": "FONT_NEUROPOLITICAL_20",
+                "type": "font"
+            },
+            {
+                "file": "fonts/neuropolitical rg.ttf",
+                "name": "FONT_NEUROPOLITICAL_38",
                 "type": "font"
             },
             {
                 "file": "images/bt-icon.png",
                 "name": "IMAGE_BT_ICON",
                 "type": "png"
-            },
-            {
-                "file": "fonts/perfect-dos-vga.ttf",
-                "name": "FONT_PERFECT_DOS_VGA_52",
-                "type": "font"
-            },
-            {
-                "file": "fonts/perfect-dos-vga.ttf",
-                "name": "FONT_PERFECT_DOS_VGA_25",
-                "type": "font"
-            },
-            {
-                "file": "fonts/perfect-dos-vga.ttf",
-                "name": "FONT_PERFECT_DOS_VGA_20",
-                "type": "font"
             }
         ]
     },

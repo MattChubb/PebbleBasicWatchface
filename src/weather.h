@@ -1,6 +1,6 @@
 #define KEY_TEMPERATURE 0
 #define KEY_CONDITIONS 1
-#define weather_font_resource RESOURCE_ID_FONT_PERFECT_DOS_VGA_20
+#define weather_font_resource RESOURCE_ID_FONT_NEUROPOLITICAL_15
   
 static TextLayer *s_weather_layer;
 static GFont s_weather_font;
