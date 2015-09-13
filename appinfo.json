@@ -12,8 +12,8 @@
     "resources": {
         "media": [
             {
-                "file": "fonts/neuropolitical rg.ttf",
-                "name": "FONT_NEUROPOLITICAL_15",
+                "file": "fonts/SFAutomaton-Bold.ttf",
+                "name": "FONT_SFAUTO_70",
                 "type": "font"
             },
             {
@@ -23,7 +23,7 @@
             },
             {
                 "file": "fonts/neuropolitical rg.ttf",
-                "name": "FONT_NEUROPOLITICAL_65",
+                "name": "FONT_NEUROPOLITICAL_15",
                 "type": "font"
             },
             {
