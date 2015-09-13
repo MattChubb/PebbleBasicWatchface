@@ -11,6 +11,10 @@ static GFont s_day_font;
 #define main_clock_position GRect(0, 30, 144, 65)
 #define date_position GRect(0, 0, 144, 25)
 #define day_position GRect(0, 110, 144, 25)
+#define main_clock_colour GColorBlack
+#define date_colour GColorCyan
+#define day_colour GColorCyan
+#define main_clock_background_colour GColorWhite
 
 static void update_time() {
   time_t temp = time(NULL);
@@ -41,8 +45,8 @@ static void create_time_layer() {
   s_time_layer = text_layer_create(main_clock_position);
   s_time_font = fonts_load_custom_font(resource_get_handle(main_clock_font_resource));
   
-  text_layer_set_background_color(s_time_layer, GColorClear);
-  text_layer_set_text_color(s_time_layer, GColorBlack);
+  text_layer_set_background_color(s_time_layer, main_clock_background_colour);
+  text_layer_set_text_color(s_time_layer, main_clock_colour);
   text_layer_set_font(s_time_layer, s_time_font);
   text_layer_set_text_alignment(s_time_layer, GTextAlignmentCenter);
 }
@@ -52,7 +56,7 @@ static void create_date_layer() {
   s_date_font = fonts_load_custom_font(resource_get_handle(date_font_resource));
   
   text_layer_set_background_color(s_date_layer, GColorClear);
-  text_layer_set_text_color(s_date_layer, GColorBlack);
+  text_layer_set_text_color(s_date_layer, date_colour);
   text_layer_set_font(s_date_layer, s_date_font);
   text_layer_set_text_alignment(s_date_layer, GTextAlignmentCenter);
 }
@@ -62,7 +66,7 @@ static void create_day_layer() {
   s_day_font = fonts_load_custom_font(resource_get_handle(day_font_resource));
   
   text_layer_set_background_color(s_day_layer, GColorClear);
-  text_layer_set_text_color(s_day_layer, GColorBlack);
+  text_layer_set_text_color(s_day_layer, day_colour);
   text_layer_set_font(s_day_layer, s_day_font);
   text_layer_set_text_alignment(s_day_layer, GTextAlignmentCenter);
 }

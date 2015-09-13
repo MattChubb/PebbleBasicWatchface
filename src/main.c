@@ -4,6 +4,8 @@
 #include <battery.h>
 #include <bluetooth.h>
 
+#define watchface_background_colour GColorBlack
+
 static Window *s_main_window;
 
 static void tick_handler(struct tm *tick_time, TimeUnits units_changed) {
@@ -16,6 +18,8 @@ static void tick_handler(struct tm *tick_time, TimeUnits units_changed) {
 
 
 static void main_window_load(Window *window) {
+  window_set_background_color(window, watchface_background_colour);
+    
   create_time_layer();
   create_date_layer();
   create_day_layer();
@@ -31,9 +35,7 @@ static void main_window_load(Window *window) {
   layer_add_child(window_get_root_layer(window), text_layer_get_layer(s_time_layer));
 }
 
-static void main_window_unload(Window *window) {
-  text_layer_destroy(s_time_layer);
-}
+static void main_window_unload(Window *window) {}
 
 
 static void inbox_received_callback(DictionaryIterator *iterator, void *context) {
@@ -75,26 +77,26 @@ static void outbox_sent_callback(DictionaryIterator *iterator, void *context) {
 
 
 static void init() {
-  APP_LOG(APP_LOG_LEVEL_INFO, "Initialising...");
+  APP_LOG(APP_LOG_LEVEL_DEBUG, "Initialising...");
  
   // Main window
-  APP_LOG(APP_LOG_LEVEL_INFO, "Loading main window...");
+  APP_LOG(APP_LOG_LEVEL_DEBUG, "Loading main window...");
   s_main_window = window_create();
   window_set_window_handlers(s_main_window, (WindowHandlers) {
     .load = main_window_load,
     .unload = main_window_unload
   });
   window_stack_push(s_main_window, true);
-  APP_LOG(APP_LOG_LEVEL_INFO, "Main window loaded.");
+  APP_LOG(APP_LOG_LEVEL_DEBUG, "Main window loaded.");
   
   // Callbacks
-  APP_LOG(APP_LOG_LEVEL_INFO, "Setting up callbacks...");
+  APP_LOG(APP_LOG_LEVEL_DEBUG, "Setting up callbacks...");
   app_message_register_inbox_received(inbox_received_callback);
   app_message_register_inbox_dropped(inbox_dropped_callback);
   app_message_register_outbox_failed(outbox_failed_callback);
   app_message_register_outbox_sent(outbox_sent_callback);
   app_message_open(app_message_inbox_size_maximum(), app_message_outbox_size_maximum());
-  APP_LOG(APP_LOG_LEVEL_INFO, "Callbacks configured successfully.");
+  APP_LOG(APP_LOG_LEVEL_DEBUG, "Callbacks configured successfully.");
  
   // Libraries
   battery_init();
@@ -115,7 +117,7 @@ static void deinit() {
 
 
 int main(void) {
-  APP_LOG(APP_LOG_LEVEL_INFO, "Starting up...");
+  APP_LOG(APP_LOG_LEVEL_DEBUG, "Starting up...");
   init();
   app_event_loop();
   deinit();
