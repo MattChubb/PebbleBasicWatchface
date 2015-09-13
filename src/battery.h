@@ -1,6 +1,8 @@
 static TextLayer *s_battery_layer;
 static GFont s_battery_font;
 
+#define battery_font_resource RESOURCE_ID_FONT_PERFECT_DOS_VGA_20
+
 static void battery_handler(BatteryChargeState state) {
   static char battery_buffer[4] = "100%";
   snprintf(battery_buffer, sizeof(battery_buffer), "%d%%", state.charge_percent);
@@ -8,13 +10,13 @@ static void battery_handler(BatteryChargeState state) {
 }
 
 static void create_battery_layer() {
-  s_battery_layer = text_layer_create(GRect(0, 0, 115, 20));
-  s_battery_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_PERFECT_DOS_VGA_20));
+  s_battery_layer = text_layer_create(GRect(0, 148, 144, 20));
+  s_battery_font = fonts_load_custom_font(resource_get_handle(battery_font_resource));
   
   text_layer_set_background_color(s_battery_layer, GColorClear);
   text_layer_set_text_color(s_battery_layer, GColorBlack);
   text_layer_set_font(s_battery_layer, s_battery_font);
-  text_layer_set_text_alignment(s_battery_layer, GTextAlignmentLeft);
+  text_layer_set_text_alignment(s_battery_layer, GTextAlignmentRight);
 }
 
 static void battery_init() {

@@ -3,6 +3,9 @@ static TextLayer *s_date_layer;
 static GFont s_time_font;
 static GFont s_date_font;
 
+#define main_clock_font_resource RESOURCE_ID_FONT_MONTAGUE_60
+#define date_font_resource RESOURCE_ID_FONT_MONTAGUE_20
+
 static void update_time() {
   time_t temp = time(NULL);
   struct tm *tick_time = localtime(&temp);
@@ -24,8 +27,8 @@ static void update_time() {
 }
 
 static void create_time_layer() {
-  s_time_layer = text_layer_create(GRect(0, 50, 144, 55));
-  s_time_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_PERFECT_DOS_VGA_52));
+  s_time_layer = text_layer_create(GRect(0, 50, 144, 60));
+  s_time_font = fonts_load_custom_font(resource_get_handle(main_clock_font_resource));
   
   text_layer_set_background_color(s_time_layer, GColorClear);
   text_layer_set_text_color(s_time_layer, GColorBlack);
@@ -35,7 +38,7 @@ static void create_time_layer() {
 
 static void create_date_layer() {
   s_date_layer = text_layer_create(GRect(0, 25, 144, 25));
-  s_date_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_PERFECT_DOS_VGA_20));
+  s_date_font = fonts_load_custom_font(resource_get_handle(date_font_resource));
   
   text_layer_set_background_color(s_date_layer, GColorClear);
   text_layer_set_text_color(s_date_layer, GColorBlack);
