@@ -8,12 +8,12 @@ static GFont s_day_font;
 #define main_clock_font_resource RESOURCE_ID_FONT_SFAUTO_70
 #define date_font_resource RESOURCE_ID_FONT_NEUROPOLITICAL_20
 #define day_font_resource RESOURCE_ID_FONT_NEUROPOLITICAL_20
-#define main_clock_position GRect(0, 20, 144, 70)
+#define main_clock_position GRect(0, 23, 144, 70)
 #define date_position GRect(0, 0, 144, 25)
 #define day_position GRect(0, 110, 144, 25)
 #define main_clock_colour GColorRed
-#define date_colour GColorCyan
-#define day_colour GColorCyan
+#define date_colour GColorBlueMoon
+#define day_colour GColorBlueMoon
 #define main_clock_background_colour GColorClear
 
 static void update_time() {
@@ -25,7 +25,7 @@ static void update_time() {
   
   // Time
   if (clock_is_24h_style() == true) {
-//    strftime(time_buffer, sizeof("0000"), "%H%M", tick_time);
+    strftime(time_buffer, sizeof("0000"), "%H%M", tick_time);
   } else {
     strftime(time_buffer, sizeof("0000"), "%I%M", tick_time);
   }
