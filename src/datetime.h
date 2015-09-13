@@ -5,12 +5,12 @@ static GFont s_time_font;
 static GFont s_date_font;
 static GFont s_day_font;
 
-#define main_clock_font_resource RESOURCE_ID_FONT_NEUROPOLITICAL_38
-#define date_font_resource RESOURCE_ID_FONT_NEUROPOLITICAL_15
+#define main_clock_font_resource RESOURCE_ID_FONT_NEUROPOLITICAL_65
+#define date_font_resource RESOURCE_ID_FONT_NEUROPOLITICAL_20
 #define day_font_resource RESOURCE_ID_FONT_NEUROPOLITICAL_20
-#define main_clock_position GRect(0, 50, 144, 60)
-#define date_position GRect(0, 0, 144, 20)
-#define day_position GRect(0, 110, 144, 20)
+#define main_clock_position GRect(0, 30, 144, 65)
+#define date_position GRect(0, 0, 144, 25)
+#define day_position GRect(0, 110, 144, 25)
 
 static void update_time() {
   time_t temp = time(NULL);
