@@ -3,8 +3,8 @@ static TextLayer *s_date_layer;
 static GFont s_time_font;
 static GFont s_date_font;
 
-#define main_clock_font_resource RESOURCE_ID_FONT_MONTAGUE_60
-#define date_font_resource RESOURCE_ID_FONT_MONTAGUE_20
+#define main_clock_font_resource RESOURCE_ID_FONT_ARCADECLASSIC_60
+#define date_font_resource RESOURCE_ID_FONT_PERFECT_DOS_VGA_20
 
 static void update_time() {
   time_t temp = time(NULL);

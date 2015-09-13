@@ -12,23 +12,13 @@
     "resources": {
         "media": [
             {
-                "file": "fonts/cocomat.zip",
-                "name": "FONT_MONTAGUE_20",
-                "type": "font"
-            },
-            {
-                "file": "fonts/cocomat.zip",
-                "name": "FONT_MONTAGUE_60",
+                "file": "fonts/ARCADECLASSIC.TTF",
+                "name": "FONT_ARCADECLASSIC_60",
                 "type": "font"
             },
             {
                 "file": "images/bt-icon.png",
                 "name": "IMAGE_BT_ICON",
-                "type": "png"
-            },
-            {
-                "file": "images/background.png",
-                "name": "IMAGE_BASIC_BACKGROUND",
                 "type": "png"
             },
             {
