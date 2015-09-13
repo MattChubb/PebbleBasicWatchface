@@ -7,7 +7,7 @@
         "location"
     ],
     "companyName": "chubb.matthew@gmail.com",
-    "longName": "Test watchface",
+    "longName": "Basic watchface",
     "projectType": "native",
     "resources": {
         "media": [
@@ -34,9 +34,8 @@
         ]
     },
     "sdkVersion": "3",
-    "shortName": "Test watchface",
+    "shortName": "Basic watchface",
     "targetPlatforms": [
-        "aplite",
         "basalt"
     ],
     "uuid": "f85a6dd1-35b4-47f4-b42f-5401855bef94",

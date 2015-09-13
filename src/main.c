@@ -5,9 +5,6 @@
 #include <bluetooth.h>
 
 static Window *s_main_window;
-static BitmapLayer *s_background_layer;
-static GBitmap *s_background_bitmap;
-
 
 static void tick_handler(struct tm *tick_time, TimeUnits units_changed) {
   update_time();
@@ -78,21 +75,26 @@ static void outbox_sent_callback(DictionaryIterator *iterator, void *context) {
 
 
 static void init() {
+  APP_LOG(APP_LOG_LEVEL_INFO, "Initialising...");
  
   // Main window
+  APP_LOG(APP_LOG_LEVEL_INFO, "Loading main window...");
   s_main_window = window_create();
   window_set_window_handlers(s_main_window, (WindowHandlers) {
     .load = main_window_load,
     .unload = main_window_unload
   });
   window_stack_push(s_main_window, true);
+  APP_LOG(APP_LOG_LEVEL_INFO, "Main window loaded.");
   
   // Callbacks
+  APP_LOG(APP_LOG_LEVEL_INFO, "Setting up callbacks...");
   app_message_register_inbox_received(inbox_received_callback);
   app_message_register_inbox_dropped(inbox_dropped_callback);
   app_message_register_outbox_failed(outbox_failed_callback);
   app_message_register_outbox_sent(outbox_sent_callback);
   app_message_open(app_message_inbox_size_maximum(), app_message_outbox_size_maximum());
+  APP_LOG(APP_LOG_LEVEL_INFO, "Callbacks configured successfully.");
  
   // Libraries
   battery_init();
@@ -109,13 +111,11 @@ static void deinit() {
   weather_deinit();
   battery_deinit();
   bluetooth_deinit();
-  
-  gbitmap_destroy(s_background_bitmap);
-  bitmap_layer_destroy(s_background_layer);
 }
 
 
 int main(void) {
+  APP_LOG(APP_LOG_LEVEL_INFO, "Starting up...");
   init();
   app_event_loop();
   deinit();
