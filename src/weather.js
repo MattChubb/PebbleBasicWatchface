@@ -9,8 +9,10 @@ var xhrRequest = function (url, type, callback) {
 
 
 function locationSuccess(pos) {
-  var url = 'http://api.openweathermap.org/data/2.5/weather?lat=' +
-  pos.coords.latitude + '&lon=' + pos.coords.longitude;
+  var url = 'http://api.openweathermap.org/data/2.5/weather?' + 
+      'lat=' +  pos.coords.latitude + 
+      '&lon=' + pos.coords.longitude +
+      '&APPID=b942e843af5e470b264793c66ba09a0e';
   
   console.log('Retrieving weather info...');
   xhrRequest(url, 'GET',

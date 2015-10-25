@@ -7,10 +7,16 @@
         "location"
     ],
     "companyName": "chubb.matthew@gmail.com",
-    "longName": "Basic watchface",
+    "longName": "Simple Digital Weather",
     "projectType": "native",
     "resources": {
         "media": [
+            {
+                "file": "images/WatchfaceScreenshot.png",
+                "menuIcon": true,
+                "name": "IMAGE_SCREENSHOT",
+                "type": "png"
+            },
             {
                 "file": "fonts/SFAutomaton-Bold.ttf",
                 "name": "FONT_SFAUTO_70",
@@ -34,7 +40,7 @@
         ]
     },
     "sdkVersion": "3",
-    "shortName": "Basic watchface",
+    "shortName": "Simple Digital Weather",
     "targetPlatforms": [
         "basalt"
     ],
