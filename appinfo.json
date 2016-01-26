@@ -15,7 +15,12 @@
                 "file": "images/WatchfaceScreenshot.png",
                 "menuIcon": true,
                 "name": "IMAGE_SCREENSHOT",
-                "type": "png"
+                "type": "bitmap"
+            },
+            {
+                "file": "images/bt-icon.png",
+                "name": "IMAGE_BT_ICON",
+                "type": "bitmap"
             },
             {
                 "file": "fonts/SFAutomaton-Bold.ttf",
@@ -31,11 +36,6 @@
                 "file": "fonts/neuropolitical rg.ttf",
                 "name": "FONT_NEUROPOLITICAL_15",
                 "type": "font"
-            },
-            {
-                "file": "images/bt-icon.png",
-                "name": "IMAGE_BT_ICON",
-                "type": "png"
             }
         ]
     },
@@ -45,7 +45,7 @@
         "basalt"
     ],
     "uuid": "f85a6dd1-35b4-47f4-b42f-5401855bef94",
-    "versionLabel": "1.0",
+    "versionLabel": "1.1",
     "watchapp": {
         "watchface": true
     }

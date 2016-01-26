@@ -11,9 +11,9 @@ static GFont s_day_font;
 #define main_clock_position GRect(0, 23, 144, 70)
 #define date_position GRect(0, 0, 144, 25)
 #define day_position GRect(0, 110, 144, 25)
-#define main_clock_colour GColorRed
-#define date_colour GColorBlueMoon
-#define day_colour GColorBlueMoon
+#define main_clock_colour GColorWhite
+#define date_colour GColorRed
+#define day_colour GColorRed
 #define main_clock_background_colour GColorClear
 
 static void update_time() {
