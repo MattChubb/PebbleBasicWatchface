@@ -25,7 +25,7 @@ static void update_time() {
   
   // Time
   if (clock_is_24h_style() == true) {
-    //strftime(time_buffer, sizeof("0000"), "%H%M", tick_time);
+    strftime(time_buffer, sizeof("0000"), "%H%M", tick_time);
   } else {
     strftime(time_buffer, sizeof("0000"), "%I%M", tick_time);
   }
