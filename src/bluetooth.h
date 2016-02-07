@@ -1,6 +1,8 @@
 static BitmapLayer *s_bt_icon_layer;
 static GBitmap *s_bt_icon_bitmap;
 
+#define bluetooth_position GRect(114, 0, 30, 30)
+//#define bluetooth_position GRect(0, 138, 30, 30)
 
 static void bluetooth_handler(bool connected) {
   layer_set_hidden(bitmap_layer_get_layer(s_bt_icon_layer), connected);
@@ -14,7 +16,7 @@ static void bluetooth_handler(bool connected) {
 static void create_bt_icon_layer() {
   s_bt_icon_bitmap = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_BT_ICON);
 
-  s_bt_icon_layer = bitmap_layer_create(GRect(114, 0, 30, 30));
+  s_bt_icon_layer = bitmap_layer_create(bluetooth_position);
   bitmap_layer_set_bitmap(s_bt_icon_layer, s_bt_icon_bitmap);
 }
 

@@ -3,6 +3,7 @@
 #include <weather.h>
 #include <battery.h>
 #include <bluetooth.h>
+#include <ctype.h>
 
 #define watchface_background_colour GColorBlack
 
