@@ -58,7 +58,7 @@ static void create_date_layer() {
   text_layer_set_background_color(s_date_layer, GColorClear);
   text_layer_set_text_color(s_date_layer, date_colour);
   text_layer_set_font(s_date_layer, s_date_font);
-  text_layer_set_text_alignment(s_date_layer, GTextAlignmentCenter);
+  text_layer_set_text_alignment(s_date_layer, GTextAlignmentLeft);
 }
 
 static void create_day_layer() {
@@ -68,7 +68,7 @@ static void create_day_layer() {
   text_layer_set_background_color(s_day_layer, GColorClear);
   text_layer_set_text_color(s_day_layer, day_colour);
   text_layer_set_font(s_day_layer, s_day_font);
-  text_layer_set_text_alignment(s_day_layer, GTextAlignmentCenter);
+  text_layer_set_text_alignment(s_day_layer, GTextAlignmentLeft);
 }
 
 static void datetime_deinit() {

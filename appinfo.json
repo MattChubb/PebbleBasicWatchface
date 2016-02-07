@@ -7,10 +7,16 @@
         "location"
     ],
     "companyName": "chubb.matthew@gmail.com",
+    "enableMultiJS": false,
     "longName": "Simple Digital Weather",
     "projectType": "native",
     "resources": {
         "media": [
+            {
+                "file": "images/bt-icon.png",
+                "name": "IMAGE_BT_ICON",
+                "type": "bitmap"
+            },
             {
                 "file": "images/WatchfaceScreenshot.png",
                 "menuIcon": true,
@@ -18,13 +24,8 @@
                 "type": "bitmap"
             },
             {
-                "file": "images/bt-icon.png",
-                "name": "IMAGE_BT_ICON",
-                "type": "bitmap"
-            },
-            {
-                "file": "fonts/SFAutomaton-Bold.ttf",
-                "name": "FONT_SFAUTO_70",
+                "file": "fonts/neuropolitical rg.ttf",
+                "name": "FONT_NEUROPOLITICAL_15",
                 "type": "font"
             },
             {
@@ -33,8 +34,8 @@
                 "type": "font"
             },
             {
-                "file": "fonts/neuropolitical rg.ttf",
-                "name": "FONT_NEUROPOLITICAL_15",
+                "file": "fonts/SFAutomaton-Bold.ttf",
+                "name": "FONT_SFAUTO_70",
                 "type": "font"
             }
         ]
