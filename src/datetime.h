@@ -8,9 +8,9 @@ static GFont s_day_font;
 #define main_clock_font_resource RESOURCE_ID_FONT_BEBASNEUE_80
 #define date_font_resource RESOURCE_ID_FONT_NEUROPOLITICAL_20
 #define day_font_resource RESOURCE_ID_FONT_NEUROPOLITICAL_20
-#define main_clock_position GRect(0, 23, 144, 85)
-#define day_position GRect(0, 0, 144, 25)
-#define date_position GRect(0, 110, 144, 25)
+#define main_clock_position GRect(0, 24, 144, 85)
+#define day_position GRect(0, 0, 144, 24)
+#define date_position GRect(0, 124, 144, 24)
 #define main_clock_colour GColorWhite
 #define date_colour GColorRed
 #define day_colour GColorRed
@@ -58,7 +58,7 @@ static void create_date_layer() {
   text_layer_set_background_color(s_date_layer, GColorClear);
   text_layer_set_text_color(s_date_layer, date_colour);
   text_layer_set_font(s_date_layer, s_date_font);
-  text_layer_set_text_alignment(s_date_layer, GTextAlignmentLeft);
+  text_layer_set_text_alignment(s_date_layer, GTextAlignmentRight);
 }
 
 static void create_day_layer() {
