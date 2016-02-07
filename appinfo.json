@@ -32,12 +32,8 @@
             },
             {
                 "file": "fonts/neuropolitical rg.ttf",
-                "name": "FONT_NEUROPOLITICAL_15",
-                "type": "font"
-            },
-            {
-                "file": "fonts/neuropolitical rg.ttf",
                 "name": "FONT_NEUROPOLITICAL_20",
+                "targetPlatforms": null,
                 "type": "font"
             }
         ]

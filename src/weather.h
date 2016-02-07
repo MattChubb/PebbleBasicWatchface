@@ -1,8 +1,8 @@
 #define KEY_TEMPERATURE 0
 #define KEY_CONDITIONS 1
-#define weather_font_resource RESOURCE_ID_FONT_NEUROPOLITICAL_15
-#define weather_colour GColorWhite
-#define weather_position GRect(0, 148, 144, 20)
+#define weather_font_resource RESOURCE_ID_FONT_NEUROPOLITICAL_20
+#define weather_colour GColorRed
+#define weather_position GRect(0, 0, 144, 24)
   
 static TextLayer *s_weather_layer;
 static GFont s_weather_font;
