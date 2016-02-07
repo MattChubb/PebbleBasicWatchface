@@ -13,6 +13,13 @@
     "resources": {
         "media": [
             {
+                "characterRegex": "[0-9]",
+                "file": "fonts/BEBASNEUE",
+                "name": "FONT_BEBASNEUE_80",
+                "targetPlatforms": null,
+                "type": "font"
+            },
+            {
                 "file": "images/bt-icon.png",
                 "name": "IMAGE_BT_ICON",
                 "type": "bitmap"
@@ -31,11 +38,6 @@
             {
                 "file": "fonts/neuropolitical rg.ttf",
                 "name": "FONT_NEUROPOLITICAL_20",
-                "type": "font"
-            },
-            {
-                "file": "fonts/SFAutomaton-Bold.ttf",
-                "name": "FONT_SFAUTO_70",
                 "type": "font"
             }
         ]

@@ -5,12 +5,12 @@ static GFont s_time_font;
 static GFont s_date_font;
 static GFont s_day_font;
 
-#define main_clock_font_resource RESOURCE_ID_FONT_SFAUTO_70
+#define main_clock_font_resource RESOURCE_ID_FONT_BEBASNEUE_80
 #define date_font_resource RESOURCE_ID_FONT_NEUROPOLITICAL_20
 #define day_font_resource RESOURCE_ID_FONT_NEUROPOLITICAL_20
-#define main_clock_position GRect(0, 23, 144, 70)
-#define date_position GRect(0, 0, 144, 25)
-#define day_position GRect(0, 110, 144, 25)
+#define main_clock_position GRect(0, 23, 144, 85)
+#define day_position GRect(0, 0, 144, 25)
+#define date_position GRect(0, 110, 144, 25)
 #define main_clock_colour GColorWhite
 #define date_colour GColorRed
 #define day_colour GColorRed
@@ -19,13 +19,13 @@ static GFont s_day_font;
 static void update_time() {
   time_t temp = time(NULL);
   struct tm *tick_time = localtime(&temp);
-  static char time_buffer[] = "2222";
+  static char time_buffer[] = "2058";
   static char date_buffer[] = "01 Jan 2000";
   static char day_buffer[] = "Wednesday";
   
   // Time
   if (clock_is_24h_style() == true) {
-    strftime(time_buffer, sizeof("0000"), "%H%M", tick_time);
+    //strftime(time_buffer, sizeof("0000"), "%H%M", tick_time);
   } else {
     strftime(time_buffer, sizeof("0000"), "%I%M", tick_time);
   }
