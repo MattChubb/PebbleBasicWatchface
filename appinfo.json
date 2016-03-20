@@ -1,10 +1,12 @@
 {
     "appKeys": {
         "KEY_CONDITIONS": 1,
+        "KEY_SEPARATOR": 2,
         "KEY_TEMPERATURE": 0
     },
     "capabilities": [
-        "location"
+        "location",
+        "configurable"
     ],
     "companyName": "chubb.matthew@gmail.com",
     "enableMultiJS": false,
@@ -13,9 +15,9 @@
     "resources": {
         "media": [
             {
-                "characterRegex": "[0-9]",
+                "characterRegex": "[0-9,:]",
                 "file": "fonts/BEBASNEUE",
-                "name": "FONT_BEBASNEUE_80",
+                "name": "FONT_BEBASNEUE_75",
                 "targetPlatforms": null,
                 "type": "font"
             },
@@ -43,7 +45,7 @@
     "targetPlatforms": [
         "basalt"
     ],
-    "uuid": "f85a6dd1-35b4-47f4-b42f-5401855bef94",
+    "uuid": "eeab686b-c7b5-481e-9b05-eb26c7005a0a",
     "versionLabel": "1.1",
     "watchapp": {
         "watchface": true

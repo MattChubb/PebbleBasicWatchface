@@ -12,7 +12,7 @@ static Window *s_main_window;
 static void tick_handler(struct tm *tick_time, TimeUnits units_changed) {
   update_time();
   
-  if(tick_time->tm_min == 0) {
+  if ( tick_time->tm_min == 0 ) {
     update_weather();
   }
 }
@@ -54,6 +54,8 @@ static void inbox_received_callback(DictionaryIterator *iterator, void *context)
     case KEY_CONDITIONS:
       snprintf(conditions_buffer, sizeof(conditions_buffer), "%s", t->value->cstring);
       break;
+    case KEY_SEPARATOR:
+      snprintf(time_separator,  sizeof(time_separator), "%s", t->value->cstring);
     default:
       APP_LOG(APP_LOG_LEVEL_ERROR, "Key %d not recognized!", (int)t->key);
       break;
@@ -105,6 +107,8 @@ static void init() {
   // Time
   update_time();
   tick_timer_service_subscribe(MINUTE_UNIT, tick_handler);
+  
+  update_weather();
 }
 
 static void deinit() {
